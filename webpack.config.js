@@ -11,8 +11,20 @@ module.exports = {
     mode: mode,
     target: target,
     devtool: "source-map",
+    output: {
+        assetModuleFilename: "images/[hash][ext][query]"
+    },
     module: {
         rules: [
+            {
+                test: /\.(png|jpe?g|gif|svg)/i,
+                type: "asset",
+                parser:{
+                    dataUrlCondition:{
+                        maxSize:30 * 1024
+                    }
+                }
+            },
             {
                 test: /\.(s[ac]|c)ss$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]

@@ -9,6 +9,7 @@ function App(props) {
                     <section>
                         <h1>Oh Hai, React</h1>
                     </section>
+                    <img width={"100px"} height={'100px'} src={require("../images/33333.png")} alt=""/>
                 </main>
             </>
     );
